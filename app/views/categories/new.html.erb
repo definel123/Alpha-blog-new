@@ -1,43 +1,9 @@
-
-<h1 class= "text-center mt-4">Create a new category</h1>
+<h1 class="text-center mt-4">Create a New category </h1>
 <div class="container">
-  <%= form_with(model: @category, class: "shadow p-3 mb-3 bg-info rounded") do |f| %>
-    <% if @category.errors.any? %><div class="alert alert-danger alert-dismissible fade show" role="alert">
-    <h4 class="alert-heading">The following errors prevented the article from being saved</h4>
-    
-     <div class="alert alert-danger alert-dismissible fade show" role="alert">
-    <h4 class="alert-heading">The following  prevented the article from being saved</h4>
-      <div id="error_explanation">
-        <h2><%= pluralize(@category.errors.count, "error") %> prohibited this category from being saved:</h2>
-
-        <ul>
-          <% @category.errors.each do |error| %>
-            <li><%= error.full_message %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
-  
-    <div class="form-group row">
-    <%= f.label :name, "Category name", class: "col-2 col-form-label text-light" %>
-     <div class ="col-10">
-    <%= f.text_field :name ,class:"form-control shadow rounded",placeholder: "Enter a name"%>
-  </div>
+  <div class="row justify-content-center">
+    <div class="col-10">
+      <%= render 'form' %>
+    </div>
+   
+  </div> 
 </div>
-
-  
-
-
- <div class="form-group text-center">
-  <div class="d-flex justify-content-center">
-    <%= f.submit class: "btn btn-warning btn-lg" %>
-  </div>
-</div>
-
-<%# 
-   <div class="mb-3">
-     link_to '[ cancel and return to articles listing ]',
-     </div> %>
-<% end %>
-</div>
-
